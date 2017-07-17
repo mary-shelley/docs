@@ -1,37 +1,124 @@
-## Welcome to GitHub Pages
+## Getting Started
 
-You can use the [editor on GitHub](https://github.com/mary-shelley/docs/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+Getting started with Frankie is super-simple, you can create the base project
+using composer:
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+```sh
+composer create-project wdalmut/frankie-tiny-app:dev-master myapp
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+Now just bring up your dev server:
 
-### Jekyll Themes
+```sh
+php -S localhost:8080 -t web
+```
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/mary-shelley/docs/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+And go using your browser to: "http://localhost:8080/"
 
-### Support or Contact
+### How the project works
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+The project uses `composer` in order to download dependencies and you can
+add any other projects using the `composer.json` as usual.
+The `web` folder includes the index file that embeds the `Symfony Container` and
+the `PHP-Di` container together using the `Acclimate` project. In this way we
+can configure any other dependencies using the Yaml syntax and the SF DiC and
+our injections directly using the PHP-Di annotations.
+
+We also have a `cache` folder in order to speed-up all framework internals.
+
+That's it...
+
+### How to start with the framework
+
+If you use PHPSpec just describe an object behavior:
+
+```php
+./vendor/bin/phpspec describe Controller/MyController
+```
+
+Now PHPSpec creates for us the `MyController` specification file:
+
+```php
+<?php
+namespace spec\Controller;
+
+use PhpSpec\ObjectBehavior;
+use Prophecy\Argument;
+
+class MyControllerSpec extends ObjectBehavior
+{
+    function it_is_initializable()
+    {
+        $this->shouldHaveType('MyController');
+    }
+}
+```
+
+If you try to run specs with:
+
+```sh
+./vendor/bin/phpspec run
+```
+
+We can also create the `MyController` source file:
+
+```php
+<?php
+namespace Controller;
+
+class MyController
+{
+}
+```
+
+By default the framework serialize the action return value in a json format,
+just add a simple specification (`MyControllerSpec`):
+
+```php
+<?php
+function it_should_return_an_hello_message(
+    Request $request, Response $response
+)
+{
+    $this->helloAction()->shouldReturn("hello world");
+}
+```
+
+Running specs again we can check that our expectations fails... Just write our
+action in `MyController`:
+
+```php
+<?php
+public function helloAction()
+{
+    return "hello world";
+}
+```
+
+Run again our specification in order to see that expectations works!
+
+### Now the HTTP flow
+
+We never define the `route` path in order to check also the flow with the
+browser or any other http client or a functional test, in order to create a
+personal path, we just have to apply our first annotation:
+
+```php
+/**
+ * @Route("/hello")
+ * @After(targetClass="Serializer\Json", targetMethod="serialize")
+ */
+public function helloAction()
+```
+
+Remember that you have to include annotations that we use, in this case:
+
+```php
+<?php
+use Corley\Middleware\Annotations\Route;
+use Corley\Middleware\Annotations\After;
+
+...
+```
+
+Just navigate: `http://localhost:8080/hello` to see our `hello world` message!
