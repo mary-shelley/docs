@@ -18,4 +18,5 @@ And go using your browser to: "http://localhost:8080/"
 ### What next?
 
  * [Routing](routing.html)
+ * [Steps (middlewares)](steps.html)
  * [Action shortcuts](shortcuts.html)
