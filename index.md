@@ -22,3 +22,5 @@ And navigate to: ["http://localhost:8080/"](http://localhost:8080)
  * [Routing](routing.html)
  * [Steps (middlewares)](steps.html)
  * [Action shortcuts](shortcuts.html)
+ * [Error Handler](errors.html)
+
