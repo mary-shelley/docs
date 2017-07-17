@@ -17,5 +17,5 @@ And go using your browser to: "http://localhost:8080/"
 
 ### What next?
 
- * [Routing](routing)
- * [Action shortcuts](shortcuts)
+ * [Routing](routing.html)
+ * [Action shortcuts](shortcuts.html)
