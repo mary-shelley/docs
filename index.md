@@ -4,15 +4,17 @@ Getting started with Frankie is super-simple, you can create the base project
 using composer:
 
 ```sh
-composer create-project \
+$ composer create-project \
     wdalmut/frankie-tiny-app:dev-master \
     myapp
+    
+$ cd myapp
 ```
 
 Now just bring up your dev server:
 
 ```sh
-php -S localhost:8080 -t web
+$ php -S localhost:8080 -t web
 ```
 
 And navigate to: ["http://localhost:8080/"](http://localhost:8080)
