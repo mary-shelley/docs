@@ -4,10 +4,7 @@ Getting started with Frankie is super-simple, you can create the base project (o
 using composer:
 
 ```sh
-$ composer create-project \
-    wdalmut/frankie-tiny-app:dev-master \
-    myapp
-    
+$ composer create-project wdalmut/frankie-tiny-app:dev-master myapp
 $ cd myapp
 ```
 
