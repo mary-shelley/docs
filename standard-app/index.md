@@ -3,7 +3,10 @@
 You can create the standard application (that have multiple dependencies) using composer:
 
 ```sh
-$ composer create-project wdalmut/frankie-standard-app:dev-master myapp
+$ composer \
+  create-project \
+  wdalmut/frankie-standard-app:dev-master \
+  myapp
 ```
 
 ### Modules
