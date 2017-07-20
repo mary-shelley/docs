@@ -1,6 +1,6 @@
 ## Getting Started
 
-Getting started with Frankie is super-simple, you can create the base project
+Getting started with Frankie is super-simple, you can create the base project (or use [the standard application](standard-app))
 using composer:
 
 ```sh
