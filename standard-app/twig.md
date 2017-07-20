@@ -23,7 +23,9 @@ class IndexController
         
         // Convert the twig template to an page HTML
         $response->setContent(
-           $this->twig->render('index/index.html.twig', ["to" => "World"]);
+           $this->twig->render(
+            'index/index.html.twig', ["to" => "World"]
+          );
         );
         
         return $response;
