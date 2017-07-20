@@ -11,7 +11,7 @@ $ composer create-project wdalmut/frankie-standard-app:dev-master myapp
 The standard application have multiple dependencies
 
  * [Twig as template engine](twig.html)
- * Doctrine ORM for database connection
+ * [Doctrine ORM for database connection](doctrine.html)
  * Zend Mail as SMTP helper
  * Monolog for logging support
  * Whoops for error management
