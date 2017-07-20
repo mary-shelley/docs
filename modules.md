@@ -23,7 +23,7 @@ class MyModule implements ModuleInterface
 ```
 
 You can choose your own real container system like: Zend Service Manager, Symfony Dependency Injection Container
-but it should implements the PSR-11 interface `Psr\ContainerInterface`.
+but it should implements the PSR-11 interface `Psr\Container\ContainerInterface`.
 
 #### Zend Framework Container example
 
