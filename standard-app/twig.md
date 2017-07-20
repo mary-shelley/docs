@@ -42,6 +42,8 @@ Of couse you can wrap the serialization process to a separate step and use it as
  */
 public function indexAction($request, $response)
 {
-    return $this->twig->render('index/index.html.twig', ["to" => "World"]);
+    return $this->twig->render(
+      'index/index.html.twig', ["to" => "World"]
+    );
 }
 ```
