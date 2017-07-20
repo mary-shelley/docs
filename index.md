@@ -1,6 +1,6 @@
 ## Getting Started
 
-Getting started with Frankie is super-simple, you can create the base project (or use [the standard application](standard-app))
+Getting started with Frankie is super-simple, you can create the base project
 using composer:
 
 ```sh
@@ -15,6 +15,10 @@ $ php -S localhost:8080 -t web
 ```
 
 And navigate to: ["http://localhost:8080/"](http://localhost:8080)
+
+### Use the standard application
+
+[The standard application](standard-app) is much more complete than the `tiny-app` because it depends on more pre-definded modules like: Twig, Doctrine, etc. 
 
 ### What next?
 
