@@ -16,5 +16,6 @@ The standard application have multiple dependencies
  * [Monolog for logging support](logging.html)
  * Whoops for error management
  * Symfony Event Dispatcher for event management
+ * Symfony Serializer for object serialization/deserialization
  * Unit testing with PHPUnit
  * Integration/Functional testing with PHPUnit
