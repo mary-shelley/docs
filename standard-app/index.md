@@ -15,7 +15,7 @@ The standard application have multiple dependencies
  * [Zend Mail as SMTP helper](email.html)
  * [Monolog for logging support](logging.html)
  * Whoops for error management
- * Symfony Event Dispatcher for event management
+ * [Symfony Event Dispatcher for event management](event.html)
  * Symfony Serializer for object serialization/deserialization
  * Unit testing with PHPUnit
  * Integration/Functional testing with PHPUnit
